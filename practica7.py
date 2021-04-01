@@ -10,28 +10,22 @@ eval1="""81, 60, 72, 24, 15, 91, 12, 70, 29, 42, 16, 3, 35, 67, 10, 57, 11, 69, 
 eval2="""30, 95, 28, 84, 84, 43, 66, 51, 4, 11, 58, 10, 13, 34, 96, 71, 86, 37, 64, 13, 8, 87, 14, 14, 49, 27, 55,
  69, 77, 59, 57, 40, 96, 24, 30, 73, 95, 19, 47, 15, 31, 39, 15, 74, 33, 57, 10"""
 
-def convertur_string(cadena):
-    cadena2=cadena
+def convertur_string(cadena):                         # Esta función recibe un string, elimina todos los caracteres que no sean letras
+    cadena2=cadena                                    # o espacios del mismo, y retorna una lista que, en este caso, contiene los nombres de los alumnos               
     for i in set(cadena) :
         if not i.isalpha() and i != " " :
             cadena2=cadena2.replace(i," ")
     return cadena2.split()
 
-
-"""nombres=nombres.replace("'"," ")
-nombres=nombres.replace(","," ")
-nombres=nombres.replace("\n"," ")
-nombres_estudiantes=nombres.split()"""
-
-eval1=eval1.replace(","," ")
-eval1=eval1.replace("\n"," ")
-eval1_lista=eval1.split()
-
-eval2=eval2.replace(","," ")
-eval2=eval2.replace("\n"," ")
-eval2_lista=eval2.split()
+def convertur_string_de_numeros(string_de_numeros):
+    string=string_de_numeros.replace(","," ")
+    string=string.replace("\n"," ")
+    return string.split()
 
 nombres_estudiantes=convertur_string(nombres)
+
+eval1_lista=convertur_string_de_numeros(eval1)
+eval2_lista=convertur_string_de_numeros(eval2)
 
 
 notas=zip(eval1_lista,eval2_lista)
