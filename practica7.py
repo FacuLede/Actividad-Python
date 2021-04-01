@@ -35,7 +35,7 @@ suma_eval=[]
 for i in notas :
     suma_eval.append(int(i[0])+int(i[1]))
 
-alumnos_notas=zip(nombres_estudiantes,suma_eval)
+alumnos_notas=list(zip(nombres_estudiantes,suma_eval))
 
 def calcular_promedio(lista_alumnos) :
     suma_de_notas=0
@@ -49,7 +49,7 @@ promedio=calcular_promedio(alumnos_notas)
 
 
 
-for i in zip(nombres_estudiantes,suma_eval) :
+for i in alumnos_notas :
     if i[1] < promedio :
         print(i[0])
 
